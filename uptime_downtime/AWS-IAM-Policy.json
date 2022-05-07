@@ -1,0 +1,55 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "ManageKMSKeys",
+            "Effect": "Allow",
+            "Action": [
+                "kms:Encrypt",
+                "kms:Decrypt",
+                "kms:ReEncrypt*",
+                "kms:GenerateDataKey",
+                "kms:DescribeKey"
+            ],
+            "Resource": [
+                "arn:aws:license-manager:*:<AccountID>:license-configuration/*",
+                "arn:aws:kms:*:<AccountID>:key/*"
+            ]
+        },
+        {
+            "Sid": "StopStartEC2Instances",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:StartInstances",
+                "ec2:StopInstances"
+            ],
+            "Resource": "arn:aws:ec2:*:<AccountID>:instance/*"
+        },
+        {
+            "Sid": "DescribeEC2Instances",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeInstances"
+            ],
+            "Resource": "arn:aws:ec2:*:<AccountID>:*"
+        },
+        {
+            "Sid": "CreateCloudWatchLog",
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogStream",
+                "logs:CreateLogGroup"
+            ],
+            "Resource": [
+                "arn:aws:logs:*:<AccountID>:log-group:*"
+            ]
+        },
+        {
+            "Sid": "PutCloudWatchLogs",
+            "Effect": "Allow",
+            "Action": "logs:PutLogEvents",
+            "Resource": "arn:aws:logs:*:<AccountID>:log-group:*"
+        }
+
+    ]
+}
