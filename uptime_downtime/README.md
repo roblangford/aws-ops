@@ -48,6 +48,7 @@ Pre-requisit: This script is designed to target a specific environment based on 
 
 
 #### Terraform:
+- [Terraform](./uptime_downtime/terraform/README.md) - Terraform code to deploy AWS EC2 Uptime/Downtime scheduler
  - Current work in progress.
 
 #### CloudFormation:
