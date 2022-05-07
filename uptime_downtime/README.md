@@ -1,5 +1,7 @@
 # AWS EC2 Uptime/Downtime scheduler
 
+ ![AWS](https://img.shields.io/badge/aws-ff9900?style=for-the-badge&logo=amazonaws&logoColor=white) ![Lambda](https://img.shields.io/badge/aws_lambda-ff9900?style=for-the-badge&logo=awslambda&logoColor=white) ![EventBridge](https://img.shields.io/badge/aws_lambda-ff9900?style=for-the-badge&logo=awslambda&logoColor=white) ![Python](https://img.shields.io/badge/python-3776ab?style=for-the-badge&logo=python&logoColor=yellow)
+
 ## Description
 
 This is a simple uptime/downtime lambda script written in Python using Boto3 for AWS EC2 that I've developed. It's written to ensure that Non-Production systems/instances are not left running out side of business hours and weekends.
@@ -24,7 +26,6 @@ The application of this can be applied to ensure that systems are started in the
   * [Terraform](#terraform)
   * [Cloudformation](#cloudformation)
 * [How to use](#how-to-use)
-* [Badges](#badges)
 
 ---
 
@@ -197,11 +198,9 @@ Cron expression rules are run based on UTC/GMT time in AWS, so you will need to 
 
 (Current work in progress.)
 Working on a simple Terraform deployment for ease of deployment.
- 
+
 * [Terraform](./uptime_downtime/terraform/README.md) - Terraform code to deploy AWS EC2 Uptime/Downtime scheduler
 
 #### CloudFormation
 
 * Coming once Terraform is built out.
-
-### Badges
