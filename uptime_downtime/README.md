@@ -1,6 +1,6 @@
 # AWS EC2 Uptime/Downtime scheduler
 
- ![AWS](https://img.shields.io/badge/aws-ff9900?style=for-the-badge&logo=amazonaws&logoColor=white) ![Lambda](https://img.shields.io/badge/aws_lambda-ff9900?style=for-the-badge&logo=awslambda&logoColor=white) ![EventBridge](https://img.shields.io/badge/aws_lambda-ff9900?style=for-the-badge&logo=awslambda&logoColor=white) ![Python](https://img.shields.io/badge/python-3776ab?style=for-the-badge&logo=python&logoColor=yellow)
+ ![AWS](https://img.shields.io/badge/aws-ff9900?style=for-the-badge&logo=amazonaws&logoColor=white) ![Lambda](https://img.shields.io/badge/aws_lambda-ff9900?style=for-the-badge&logo=awslambda&logoColor=white) ![Python](https://img.shields.io/badge/python-3776ab?style=for-the-badge&logo=python&logoColor=yellow)
 
 ## Description
 
