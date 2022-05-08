@@ -29,12 +29,6 @@ variable "enable_cloudwatch_logging" {
   default     = true
 }
 
-variable "ec2_volumes_ecrypted" {
-  type        = bool
-  description = "Set to True if you have encrypted your EC2 Volumes"
-  default     = false
-}
-
 variable "lambda_cloudwatch_log_retention" {
   type        = number
   description = "Input a number of days to store CloudWatch Logs"
@@ -71,13 +65,13 @@ variable "enable_eventbridge_rule_start_ec2" {
 
 variable "scheduled_start_hour" {
   type        = string
-  description = "Enter the UTC hour that you wish to Stop the EC2 Instances"
+  description = "Enter the UTC hour that you wish to Start the EC2 Instances"
   default     = 8
 }
 
 variable "scheduled_start_minute" {
   type        = number
-  description = "Enter the Minute that you wish to Stop the EC2 Instances"
+  description = "Enter the Minute that you wish to Start the EC2 Instances"
   default     = 0
 }
 
