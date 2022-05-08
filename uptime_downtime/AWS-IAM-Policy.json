@@ -31,25 +31,19 @@
             "Action": [
                 "ec2:DescribeInstances"
             ],
-            "Resource": "arn:aws:ec2:*:<AccountID>:*"
+            "Resource": "*"
         },
         {
             "Sid": "CreateCloudWatchLog",
             "Effect": "Allow",
             "Action": [
                 "logs:CreateLogStream",
-                "logs:CreateLogGroup"
+                "logs:CreateLogGroup",
+                "logs:PutLogEvents"
             ],
             "Resource": [
-                "arn:aws:logs:*:<AccountID>:log-group:*"
+                "arn:aws:logs:*:*:*"
             ]
-        },
-        {
-            "Sid": "PutCloudWatchLogs",
-            "Effect": "Allow",
-            "Action": "logs:PutLogEvents",
-            "Resource": "arn:aws:logs:*:<AccountID>:log-group:*"
         }
-
     ]
 }
