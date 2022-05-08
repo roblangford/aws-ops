@@ -60,26 +60,20 @@ resource "aws_iam_policy" "iam_policy_lambda_uptime_downtime_ec2" {
         "Action" : [
           "ec2:DescribeInstances"
         ],
-        "Resource" : "arn:aws:ec2:*:${var.aws_account_id}:*"
+        "Resource" : "*"
       },
       {
         "Sid" : "CreateCloudWatchLog",
         "Effect" : "Allow",
         "Action" : [
           "logs:CreateLogStream",
-          "logs:CreateLogGroup"
+          "logs:CreateLogGroup",
+          "logs:PutLogEvents"
         ],
         "Resource" : [
-          "arn:aws:logs:*:${var.aws_account_id}:log-group:*"
+          "arn:aws:logs:*:*:*"
         ]
-      },
-      {
-        "Sid" : "PutCloudWatchLogs",
-        "Effect" : "Allow",
-        "Action" : "logs:PutLogEvents",
-        "Resource" : "arn:aws:logs:*:${var.aws_account_id}:log-group:*"
       }
-
     ]
   })
 }
