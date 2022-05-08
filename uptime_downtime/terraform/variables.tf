@@ -17,10 +17,22 @@ variable "lambda_function_name" {
   default     = "uptime_downtime_function"
 }
 
+variable "target_environment" {
+  type        = string
+  description = "Input a target Environment tag to execute against."
+  default     = "DEV"
+}
+
 variable "enable_cloudwatch_logging" {
   type        = bool
   description = "Set to True to enable CloudWatch Logging"
   default     = true
+}
+
+variable "enable_example_eventbridge_rule_stop_ec2" {
+  type        = bool
+  description = "Set to True to deploy the example EventBridge Rule - Stop EC2 Environment:DEV, 5pm AEST"
+  default     = false
 }
 
 variable "ec2_volumes_ecrypted" {
@@ -45,7 +57,6 @@ variable "scheduled_stop_minute" {
   type        = number
   description = "Enter the Minute that you wish to Stop the EC2 Instances"
   default     = 0
-
 }
 
 locals {
