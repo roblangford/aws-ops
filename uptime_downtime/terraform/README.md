@@ -61,18 +61,18 @@ The code has been tested and working on the Terraform Version 1.1.9 and AWS Prov
 
 ##### Variable Inputs
 
-variable "region" - this is a string input to denote where to deploy the resources (default: ap-southeast-2)
-variable "aws_account_id" - number input for AWS Account ID
-variable "lambda_function_name" - Input a name to identify your AWS Lambda Function. (default: uptime_downtime_function)
-variable "target_environment" - Input a target Environment tag to execute against. (default: DEV)
-variable "enable_cloudwatch_logging" - Set to True to enable CloudWatch Logging.  (default: true)
-variable "lambda_cloudwatch_log_retention" - Input a number of days to store CloudWatch Logs. (default: 14)
-variable "enable_eventbridge_rule_stop_ec2" - Set to True and the other scheduled stop variables to create EventBridge Rule (default: false)
-variable "scheduled_stop_hour" - Enter the UTC hour that you wish to Stop the EC2 Instances. (default: 17)
-variable "scheduled_stop_minute" - Enter the Minute that you wish to Stop the EC2 Instances. (default: 0)
-variable "enable_eventbridge_rule_start_ec2" - Set to True and the other scheduled start variables to create EventBridge Rule (default: false)
-variable "scheduled_start_hour" - Enter the UTC hour that you wish to Start the EC2 Instances. (default: 8)
-variable "scheduled_start_minute" - Enter the Minute that you wish to Start the EC2 Instances. (default: 0)
+variable "region" - this is a string input to denote where to deploy the resources (default: ap-southeast-2)  
+variable "aws_account_id" - number input for AWS Account ID  
+variable "lambda_function_name" - Input a name to identify your AWS Lambda Function. (default: uptime_downtime_function)  
+variable "target_environment" - Input a target Environment tag to execute against. (default: DEV)  
+variable "enable_cloudwatch_logging" - Set to True to enable CloudWatch Logging.  (default: true)  
+variable "lambda_cloudwatch_log_retention" - Input a number of days to store CloudWatch Logs. (default: 14)  
+variable "enable_eventbridge_rule_stop_ec2" - Set to True and the other scheduled stop variables to create EventBridge Rule (default: false) 
+variable "scheduled_stop_hour" - Enter the UTC hour that you wish to Stop the EC2 Instances. (default: 17)  
+variable "scheduled_stop_minute" - Enter the Minute that you wish to Stop the EC2 Instances. (default: 0)  
+variable "enable_eventbridge_rule_start_ec2" - Set to True and the other scheduled start variables to create EventBridge Rule (default: false)  
+variable "scheduled_start_hour" - Enter the UTC hour that you wish to Start the EC2 Instances. (default: 8)  
+variable "scheduled_start_minute" - Enter the Minute that you wish to Start the EC2 Instances. (default: 0)  
 
 The input variables for EventBridge Rules are used to generate cron expressions for schedules. All times are based on GMT/UTC and should be input in 24 hour format.
 e.g.: Brisbane AEST is +10 hours to stop instances at 5pm you would set scheduled_stop_hour to 7
