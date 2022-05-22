@@ -195,8 +195,9 @@ Cron expression rules are run based on UTC/GMT time in AWS, so you will need to 
 * To finish click **Next**, **Next**, and **Create Rule**
 
 #### Terraform
+Infrastructure as code deployment using Terraform
 
-* [Terraform](./uptime_downtime/terraform/README.md) - Terraform code to deploy AWS EC2 Uptime/Downtime scheduler
+* [Terraform](./terraform/README.md) - Terraform code to deploy AWS EC2 Uptime/Downtime scheduler
 
 #### CloudFormation
 
