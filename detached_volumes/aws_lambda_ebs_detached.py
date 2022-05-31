@@ -10,11 +10,11 @@
 import boto3
 
 # EBS volume lookup
-def detached_ebs_volume_lookup(ec2_client, environment_tag, volume_state):
+def detached_ebs_volume_lookup(ec2_client, volume_state):
 
     # Filter Instances to target 
-    environment_filters = [{'Name':'tag:Environment','Values':[environment_tag]},{'Name' : 'status','Values': [volume_state]}]
-    filtered_volumes = ec2_client.describe_volumes(Filters=environment_filters).get("Volumes")
+    volume_filters = [{'Name' : 'status','Values':[volume_state]}]
+    filtered_volumes = ec2_client.describe_volumes(Filters=volume_filters).get("Volumes")
 
     # Return list of InstanceIds
     return filtered_volumes
@@ -36,18 +36,22 @@ def lambda_handler(event, context):
     # Get volume Statuses: ec2_client.describe_volume_status().get('VolumeStatuses')
 
     # Lookup EC2 instances.
-    detached_volumes = detached_ebs_volume_lookup(ec2_client, event_input_region, volume_state)
+    detached_volumes = detached_ebs_volume_lookup(ec2_client, volume_state)
     
 
     # Check for Available disks (detached)
     if len(detached_volumes['Volumes']) != 0 :
-
+        volume_reports = {}
         # Loop through Volume lists to capture Id's
-        for Volume in detached_volumes['Volumes']:
+        for Volume in detached_volumes:
             volume_id = Volume["VolumeId"]
-            volume_tags = Volume["Tags"]
+            if "Tags" in Volume:
+                volume_tags = Volume["Tags"]
+            else:
+                volume_tags = "None"
 
-            volume_reports.append()
+            volume_reports[volume_id] = volume_tags
+        
     else:
-        print(f'There are detached volumes found')
+        print(f'There are no detached volumes found')
         exit
